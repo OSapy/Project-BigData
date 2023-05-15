@@ -7,9 +7,6 @@ WORKDIR /app
 # Copier les fichiers du répertoire courant dans le conteneur
 ADD . /app
 
-# Copiez le script Python dans l'image
-COPY download.py /app
-
 #test
 RUN ls /app
 

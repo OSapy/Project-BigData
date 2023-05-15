@@ -1,18 +1,24 @@
 version: '3.9'
 services:
   image_downloader:
-    build: ./docker_download
+    build: 
+      context : .
+      dockerfile : ./docker_download/dockerfile
     volumes:
       - ./images:/app/images
   image_metadata_extractor:
-    build: ./docker_extract
+    build: 
+      context : .
+      dockerfile : ./docker_extract
     depends_on:
       - image_downloader
     volumes:
       - ./images:/app/images
       - ./metadata:/app/metadata
   image_extracter:
-    build: ./extract
+    build: 
+      context : .
+      dockerfile : ./docker_extract
     depends_on:
       - image_downloader
       - image_metadata_extractor

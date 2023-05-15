@@ -40,5 +40,5 @@ for filename in os.listdir(path_to_folder):
 
         # Convert the dictionary to JSON and store it in a file
         json_filename = os.path.splitext(filename)[0] + '.json'
-        with open(os.path.join('metadata', json_filename), 'w') as f:
+        with open(os.path.join('/app/metadata', json_filename), 'w') as f:
             json.dump(metadata, f, cls=MyEncoder)

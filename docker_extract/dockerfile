@@ -12,8 +12,5 @@ RUN mkdir /app/metadata
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copiez le script Python dans l'image
-COPY extract.py /app
-
 # Exécutez le script Python lorsque le conteneur est démarré
 CMD ["python", "extract.py"]

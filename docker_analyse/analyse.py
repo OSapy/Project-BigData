@@ -77,5 +77,5 @@ for filename in os.listdir(path_to_folder):
         metadata = get_image_metadata(image_path)
 
         # on sauvegarde les métadonnées dans un fichier json
-        with open(os.path.join("metadata", os.path.splitext(filename)[0] + ".json"), "w") as f:
+        with open(os.path.join("/app/metadata", os.path.splitext(filename)[0] + ".json"), "w") as f:
             json.dump(metadata, f)
