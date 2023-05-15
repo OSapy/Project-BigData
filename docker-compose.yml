@@ -6,23 +6,22 @@ services:
       dockerfile : ./docker_download/dockerfile
     volumes:
       - ./images:/app/images
-  image_analyse:
-    build: 
-      context : .
-      dockerfile : ./docker_analyse/dockerfile
-    depends_on:
-      - image_downloader
-    volumes:
-      - ./images:/app/images
-      - ./metadata:/app/metadata
   image_extracter:
     build: 
       context : .
       dockerfile : ./docker_extract/dockerfile
     depends_on:
       - image_downloader
-      - image_analyse
     volumes:
       - ./images:/app/images
       - ./metadata:/app/metadata
-
+  image_analyse:
+    build: 
+      context : .
+      dockerfile : ./docker_analyse/dockerfile
+    depends_on:
+      - image_extracter
+    volumes:
+      - ./images:/app/images
+      - ./metadata:/app/metadata
+  

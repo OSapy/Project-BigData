@@ -5,10 +5,7 @@ FROM python:3.8-slim-buster
 WORKDIR /app
 
 # Copier les fichiers du répertoire courant dans le conteneur
-ADD . /app
-
-#test
-RUN ls /app
+COPY ./docker_download/ /app
 
 # Installer les dépendances
 RUN pip install requests 

@@ -70,6 +70,7 @@ def get_image_metadata(image_path):
     return metadata
 
 # on boucle sur les images du dossier
+metadata_path = os.path.abspath("/app/metadata") # Ajoutez cette ligne
 for filename in os.listdir(path_to_folder):
     if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
         # on récupère les métadonnées
@@ -77,5 +78,5 @@ for filename in os.listdir(path_to_folder):
         metadata = get_image_metadata(image_path)
 
         # on sauvegarde les métadonnées dans un fichier json
-        with open(os.path.join("/app/metadata", os.path.splitext(filename)[0] + ".json"), "w") as f:
+        with open(os.path.join(metadata_path, os.path.splitext(filename)[0] + ".json"), "w") as f: # Modifiez cette ligne
             json.dump(metadata, f)
