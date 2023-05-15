@@ -1,0 +1,19 @@
+# Dockerfile
+FROM python:3.8-slim
+
+# Installez les dépendances
+RUN pip install Pillow torchvision
+
+# Créez les répertoires de travail
+RUN mkdir /app
+RUN mkdir /app/images
+RUN mkdir /app/metadata
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copiez le script Python dans l'image
+COPY extract.py /app
+
+# Exécutez le script Python lorsque le conteneur est démarré
+CMD ["python", "extract.py"]

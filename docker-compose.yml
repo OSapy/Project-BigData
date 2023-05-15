@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  image_downloader:
+    build: ./docker_download
+    volumes:
+      - ./images:/app/images
+  image_metadata_extractor:
+    build: ./docker_extract
+    volumes:
+      - ./images:/app/images
+      - ./metadata:/app/metadata
+  image_extracter:
+    build: ./extract
+    volumes:
+      - ./images:/app/images
+      - ./metadata:/app/metadata
