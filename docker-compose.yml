@@ -9,7 +9,7 @@ services:
   image_metadata_extractor:
     build: 
       context : .
-      dockerfile : ./docker_extract
+      dockerfile : ./docker_extract/dockerfile
     depends_on:
       - image_downloader
     volumes:
@@ -18,7 +18,7 @@ services:
   image_extracter:
     build: 
       context : .
-      dockerfile : ./docker_extract
+      dockerfile : ./docker_extract/dockerfile
     depends_on:
       - image_downloader
       - image_metadata_extractor
