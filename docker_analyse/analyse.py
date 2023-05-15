@@ -10,13 +10,13 @@ import torchvision.transforms as T
 from torchvision.models.detection import fasterrcnn_resnet50_fpn
 
 #inisalisation du path to folder
-path_to_folder = os.path.abspath('./images')
+path_to_folder = os.path.abspath('/app/images')
 
 # initialise le modèle ViT en mode évaluation
 model = fasterrcnn_resnet50_fpn(pretrained=True)
 model.eval()
 
-image_path = os.path.abspath("./images")
+image_path = os.path.abspath("/app/images")
 
 # fonction pour récupérer les métadonnées d'une image
 def get_image_metadata(image_path):

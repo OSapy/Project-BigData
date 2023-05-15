@@ -16,7 +16,7 @@ headers = {
 }
 
 # construction de la requête
-path = os.path.abspath("./images")
+path = os.path.abspath("/app/images")
 num_images = 15
 
 query_params = {

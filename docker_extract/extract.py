@@ -19,7 +19,7 @@ class MyEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 # chemin vers le dossier images
-path_to_folder = os.path.abspath('./images')
+path_to_folder = os.path.abspath('/app/images')
 
 # crée le dossier metadata s'il n'xiste pas
 if not os.path.exists('metadata'):
