@@ -5,7 +5,7 @@ from PIL.ExifTags import TAGS
 import cv2
 from colorthief import ColorThief
 import pytesseract
-
+import torchvision
 import torchvision.transforms as T
 from torchvision.models.detection import fasterrcnn_resnet50_fpn
 
@@ -13,7 +13,7 @@ from torchvision.models.detection import fasterrcnn_resnet50_fpn
 path_to_folder = os.path.abspath('/app/images')
 
 # initialise le modèle ViT en mode évaluation
-model = fasterrcnn_resnet50_fpn(pretrained=True)
+model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
 model.eval()
 
 image_path = os.path.abspath("/app/images")
